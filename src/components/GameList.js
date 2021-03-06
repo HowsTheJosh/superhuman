@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import refleximg from "../Images/reflex.png";
+import history from "./History";
 export default class GameList extends Component {
   render() {
     return (
@@ -8,7 +9,10 @@ export default class GameList extends Component {
           <div className="col-lg-1"></div>
           <div className="col-lg-10">
             <div className="card-deck" id="gamelist">
-              <div className="card">
+              <div
+                className="card"
+                onClick={() => history.push("/superhuman/reflex")}
+              >
                 <img
                   className="card-img-top"
                   src={refleximg}
