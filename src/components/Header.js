@@ -5,8 +5,8 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" light expand="md">
-          <NavbarBrand href="/" style={{ color: "white" }}>
+        <Navbar color="dark" light expand="md" id="navbar">
+          <NavbarBrand href="/superhuman" style={{ color: "white" }}>
             LOGO
           </NavbarBrand>
         </Navbar>

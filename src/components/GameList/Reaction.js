@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "../../Css/Reaction.css";
 var start = 0,
   green = 0,
   setTo = null,
@@ -9,46 +9,60 @@ var start = 0,
   avgRT = 0;
 export default class Reflex extends Component {
   state = { renderBtn: null };
+  componentDidMount() {
+    window.scrollTo(0, document.getElementById("root"));
+  }
   startReflex() {
     gCount = gCount + 1;
     t0 = performance.now();
     green = 1;
-    document.getElementById("reflex-area").style.background = "green";
-    document.getElementById("game-text").innerHTML = "Click!";
+    document.getElementById("reflex-area").style.background = "#4bdb6a";
+    document.getElementById(
+      "game-text"
+    ).innerHTML = `<i className="bi bi-hand-index-fill"></i> <br/>Click!`;
   }
   runReflex() {
     if (!start && !green && !this.state.renderBtn) {
       document.getElementById("avgtext").innerHTML = "";
+      document.getElementById("infotext").innerHTML = "";
       start = 1;
-      document.getElementById("reflex-area").style.background = "red";
+      document.getElementById("reflex-area").style.background = "#ce2636";
       document.getElementById(
         "game-text"
-      ).innerHTML = `<i class="bi bi-hourglass-split"></i> <br/>Wait for green`;
+      ).innerHTML = `<i className="bi bi-hourglass-split"></i> <br/>Wait for green`;
       var num = Math.floor(Math.random() * 500 + 500);
       setTo = setTimeout(this.startReflex, num);
       console.log(num);
     } else if (start && !green) {
       clearTimeout(setTo);
       start = 0;
-      document.getElementById("reflex-area").style.background = "blue";
-      document.getElementById("game-text").innerHTML = "Clicked too soon";
-    } else if (start && green) {
-      t1 = performance.now();
-      document.getElementById("reflex-area").style.background = "blue";
+      document.getElementById("reflex-area").style.background = "#2b87d1";
       document.getElementById(
         "game-text"
-      ).innerHTML = `<i class="bi bi-clock-fill"></i>  ${t1 - t0}`;
-      avgRT = avgRT + (t1 - t0);
+      ).innerHTML = `<i className="bi bi-shield-fill-exclamation"></i> <br/>Clicked too soon!`;
+      document.getElementById("infotext").innerHTML = "Click to try again";
+    } else if (start && green) {
+      t1 = performance.now();
+      document.getElementById("reflex-area").style.background = "#2b87d1";
+      document.getElementById(
+        "game-text"
+      ).innerHTML = `<i className="bi bi-clock-fill"></i> <br/> ${Math.floor(
+        t1 - t0
+      )} ms`;
+      document.getElementById("infotext").innerHTML = "Click to continue";
+      avgRT = avgRT + Math.floor(t1 - t0);
       green = 0;
       start = 0;
-      if (gCount == 1) {
+      if (gCount == 2) {
         gCount = 0;
         start = 0;
-        avgRT = avgRT / 3;
+        avgRT = avgRT / 2;
         this.setState({ renderBtn: true });
         document.getElementById(
           "avgtext"
         ).innerHTML = `Average Reflex Time ${avgRT.toFixed(2)}`;
+        document.getElementById("infotext").innerHTML = "";
+        avgRT = 0;
       }
     }
   }
@@ -60,12 +74,12 @@ export default class Reflex extends Component {
           className="container-fluid"
           id="reflex-area"
           style={{
-            background: "blue",
-            height: "80vh",
+            background: "#2b87d1",
+            height: "93vh",
           }}
         >
-          <div className="row" style={{ height: "33%" }}></div>
-          <div className="row" style={{ height: "34%" }}>
+          <div className="row" style={{ height: "25%" }}></div>
+          <div className="row" style={{ height: "50%" }}>
             <div className="col-0 col-lg-2"></div>
             <div
               className="col-12 col-lg-8"
@@ -75,7 +89,7 @@ export default class Reflex extends Component {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                fontSize: "5vw",
+
                 color: "white",
               }}
             >
@@ -85,7 +99,12 @@ export default class Reflex extends Component {
                   className="p-2 bd-highlight"
                   style={{ textAlign: "center" }}
                 >
-                  Click to Start the game
+                  <i className="bi bi-lightning-charge-fill"></i> <br />
+                  Reaction Time Test
+                </div>
+                <div id="infotext">
+                  When the red box turns green, click as fast as you can.
+                  <br /> Click to Start the Game
                 </div>
                 <div id="avgtext" className="p-2 bd-highlight"></div>
                 <div className="p-2 bd-highlight">
@@ -93,9 +112,12 @@ export default class Reflex extends Component {
                     <button
                       className="btn btn-primary"
                       onClick={() => {
-                        document.getElementById("game-text").innerHTML =
-                          "Click To start the game";
+                        document.getElementById(
+                          "game-text"
+                        ).innerHTML = `<i className="bi bi-lightning-charge-fill"></i> <br />Reaction Time Test`;
                         document.getElementById("avgtext").innerHTML = "";
+                        document.getElementById("infotext").innerHTML =
+                          "When the red box turns green, click as fast as you can.<br /> Click to Start the Game";
                         this.setState({ renderBtn: null });
                       }}
                     >
@@ -107,23 +129,7 @@ export default class Reflex extends Component {
             </div>
             <div className="col-0 col-lg-2"></div>
           </div>
-          <div className="row" style={{ height: "33%" }}></div>
-        </div>
-        <div className="container">
-          <div className="row">
-            <div className="card card-body bg-light">
-              <blockquote className="blockquote">
-                <p>About Reflex</p>
-                <footer className="blockquote-footer">
-                  Yogi Berra,
-                  <cite title="Source Title">
-                    The Wit and Wisdom of Yogi Berra, P. Pepe, Diversion Books,
-                    2014
-                  </cite>
-                </footer>
-              </blockquote>
-            </div>
-          </div>
+          <div className="row" style={{ height: "25%" }}></div>
         </div>
       </>
     );

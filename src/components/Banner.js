@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 
+var h, wh, w;
 const svgVariants = {
   hidden: { rotate: 0 },
   visible: {
@@ -25,22 +26,29 @@ const pathVariants = {
 };
 
 export default class Banner extends Component {
+  componentDidMount() {
+    h = document.getElementById("navbar").clientHeight;
+    wh = window.innerHeight;
+    w = window.innerWidth;
+    console.log(wh);
+    this.forceUpdate();
+  }
   render() {
     return (
       <div
         style={{
-          backgroundImage: "linear-gradient(#333,white)",
+          // backgroundImage: "linear-gradient(black,black)",
+          backgroundImage: "linear-gradient(rgba(255,0,0,0), rgba(255,0,0,1))",
 
           // background: "#333",
           margin: "0",
-          height: "90vh",
-          width: "100vw",
+          height: wh - h,
+          width: "100%",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <h1>Welcome To</h1>
         <motion.svg
           variants={svgVariants}
           initial="hidden"
@@ -188,7 +196,7 @@ export default class Banner extends Component {
           </defs>
         </motion.svg>
         <button type="button" className="ui button">
-          <Link activeClass="active" to="gamelist" spy={true} smooth={true}>
+          <Link activeclassName="active" to="gamelist" spy={true} smooth={true}>
             Explore
           </Link>
         </button>

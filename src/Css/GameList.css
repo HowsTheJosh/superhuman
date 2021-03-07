@@ -1,0 +1,78 @@
+.card-anime {
+  padding-bottom: 10%;
+  border-radius: 10px 20px;
+  color: rgb(76, 76, 201);
+  transition: 150ms linear;
+  box-shadow: 2px 2px 5px grey;
+}
+@keyframes mymove {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -20px;
+  }
+}
+
+.card-anime:hover {
+  border-radius: 10px 80px;
+
+  transform: translateY(-13px);
+  box-shadow: 7px 7px 10px grey;
+  color: orange;
+}
+
+@media only screen and (min-width: 1400px) {
+  div.card-text {
+    font-size: 30px;
+  }
+  .icn-txt {
+    font-size: 70px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  div.card-text {
+    font-size: 30px;
+  }
+  .icn-txt {
+    font-size: 70px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  div.card-text {
+    font-size: 25px;
+  }
+  .icn-txt {
+    font-size: 50px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  div.card-text {
+    font-size: 25px;
+  }
+  .icn-txt {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  div.card-text {
+    font-size: 18px;
+  }
+  .icn-txt {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  div.card-text {
+    font-size: 30px;
+  }
+  .icn-txt {
+    font-size: 100px;
+  }
+  .card-anime {
+    padding-top: 10%;
+    margin-top: 10%;
+  }
+}
