@@ -29,11 +29,11 @@ const pathVariants = {
 export default class GameList extends Component {
   render() {
     return (
-      <div style={{ backgroundColor: "#e6e8f4" }} id="gamelist">
+      <div style={{ backgroundColor: "#E5E5E5" }} id="gamelist">
         <div
           className="container"
           style={{
-            backgroundColor: "#e6e8f4",
+            backgroundColor: "#E5E5E5",
             paddingTop: "5%",
             paddingBottom: "13%",
           }}

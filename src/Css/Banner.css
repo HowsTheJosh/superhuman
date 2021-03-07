@@ -1,0 +1,62 @@
+div.anime-btn {
+  margin-top: 40%;
+  color: white;
+  position: absolute;
+  animation: mmove 1s infinite;
+  font-size: 30px;
+  animation-direction: alternate;
+  text-align: center;
+}
+@keyframes mmove {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -40px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  div.anime-btn {
+    margin-top: 650px;
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  div.anime-btn {
+    margin-top: 550px;
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  div.anime-btn {
+    margin-top: 600px;
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  div.anime-btn {
+    margin-top: 600px;
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  div.anime-btn {
+    margin-top: 650px;
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 575px) {
+  div.anime-btn {
+    margin-top: 130%;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 319px) {
+  div.anime-btn {
+    margin-top: 500px;
+    font-size: 20px;
+  }
+}
