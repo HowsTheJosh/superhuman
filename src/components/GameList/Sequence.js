@@ -32,9 +32,8 @@ class Sequence extends React.Component {
             id="levelDiv"
             className="row"
             style={{ height: "25%", justifyContent: "center" }}
-            onClick={this.calh}
           >
-            <p id="levelPara"></p>
+            <p id="levelPara" style={{ color: "white" }}></p>
           </div>
           <div className="row" style={{ height: "50%" }}>
             {this.state.renderInfo && (
@@ -59,7 +58,12 @@ class Sequence extends React.Component {
               <SequenceMemoryGame handler={this.handler} />
             )}
           </div>
-          <div className="row" style={{ height: "25%" }}></div>
+          <div
+            className="row"
+            style={{ height: "25%", justifyContent: "center" }}
+          >
+            <p id="turnPara" style={{ color: "white" }}></p>
+          </div>
         </div>
       </>
     );
