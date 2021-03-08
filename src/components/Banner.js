@@ -30,7 +30,6 @@ export default class Banner extends Component {
     h = document.getElementById("navbar").clientHeight;
     wh = window.innerHeight;
     w = window.innerWidth;
-    console.log(wh);
     this.forceUpdate();
   }
   render() {
@@ -252,7 +251,7 @@ export default class Banner extends Component {
           </defs>
         </motion.svg>
 
-        <div className="anime-btn">
+        <div className="anime-btn" style={{ marginTop: wh - 80 }}>
           <Link activeclassname="active" to="gamelist" spy={true} smooth={true}>
             Click to Explore
             <br />

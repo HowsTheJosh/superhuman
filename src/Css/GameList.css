@@ -1,10 +1,10 @@
 .card-anime {
   padding-bottom: 10%;
-  border-radius: 10px 20px;
   color: rgb(76, 76, 201);
   transition: 150ms linear;
   box-shadow: 2px 2px 5px grey;
 }
+
 @keyframes mymove {
   from {
     top: 0px;
@@ -16,7 +16,6 @@
 
 .card-anime:hover {
   border-radius: 10px 80px;
-
   transform: translateY(-13px);
   box-shadow: 7px 7px 10px grey;
   color: orange;

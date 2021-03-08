@@ -19,7 +19,7 @@ export default class Reflex extends Component {
     document.getElementById("reflex-area").style.background = "#4bdb6a";
     document.getElementById(
       "game-text"
-    ).innerHTML = `<i className="bi bi-hand-index-fill"></i> <br/>Click!`;
+    ).innerHTML = `<i class="bi bi-hand-index-fill"></i> <br/>Click!`;
   }
   runReflex() {
     if (!start && !green && !this.state.renderBtn) {
@@ -29,7 +29,7 @@ export default class Reflex extends Component {
       document.getElementById("reflex-area").style.background = "#ce2636";
       document.getElementById(
         "game-text"
-      ).innerHTML = `<i className="bi bi-hourglass-split"></i> <br/>Wait for green`;
+      ).innerHTML = `<i class="bi bi-hourglass-split"></i> <br/>Wait for green`;
       var num = Math.floor(Math.random() * 500 + 500);
       setTo = setTimeout(this.startReflex, num);
       console.log(num);
@@ -39,14 +39,14 @@ export default class Reflex extends Component {
       document.getElementById("reflex-area").style.background = "#2b87d1";
       document.getElementById(
         "game-text"
-      ).innerHTML = `<i className="bi bi-shield-fill-exclamation"></i> <br/>Clicked too soon!`;
+      ).innerHTML = `<i class="bi bi-shield-fill-exclamation"></i> <br/>Clicked too soon!`;
       document.getElementById("infotext").innerHTML = "Click to try again";
     } else if (start && green) {
       t1 = performance.now();
       document.getElementById("reflex-area").style.background = "#2b87d1";
       document.getElementById(
         "game-text"
-      ).innerHTML = `<i className="bi bi-clock-fill"></i> <br/> ${Math.floor(
+      ).innerHTML = `<i class="bi bi-clock-fill"></i> <br/> ${Math.floor(
         t1 - t0
       )} ms`;
       document.getElementById("infotext").innerHTML = "Click to continue";
@@ -84,12 +84,10 @@ export default class Reflex extends Component {
             <div
               className="col-12 col-lg-8"
               style={{
-                font: "white",
                 textAlign: "center",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-
                 color: "white",
               }}
             >
@@ -114,7 +112,7 @@ export default class Reflex extends Component {
                       onClick={() => {
                         document.getElementById(
                           "game-text"
-                        ).innerHTML = `<i className="bi bi-lightning-charge-fill"></i> <br />Reaction Time Test`;
+                        ).innerHTML = `<i class="bi bi-lightning-charge-fill"></i> <br />Reaction Time Test`;
                         document.getElementById("avgtext").innerHTML = "";
                         document.getElementById("infotext").innerHTML =
                           "When the red box turns green, click as fast as you can.<br /> Click to Start the Game";
