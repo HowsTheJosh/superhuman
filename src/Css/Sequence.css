@@ -1,0 +1,65 @@
+@media only screen and (min-width: 1400px) {
+  div#game-text {
+    font-size: 70px;
+  }
+  div#avgtext {
+    font-size: 30px;
+  }
+  div#infotext {
+    font-size: 35px;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  div#game-text {
+    font-size: 50px;
+  }
+  div#avgtext {
+    font-size: 30px;
+  }
+  div#infotext {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  div#game-text {
+    font-size: 50px;
+  }
+  div#avgtext {
+    font-size: 30px;
+  }
+  div#infotext {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  div#game-text {
+    font-size: 50px;
+  }
+  div#avgtext {
+    font-size: 40px;
+  }
+  div#infotext {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  div#game-text {
+    font-size: 50px;
+  }
+  div#avgtext {
+    font-size: 40px;
+  }
+  div#infotext {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  div#game-text {
+    font-size: 35px;
+  }
+  div#avgtext {
+    font-size: 25px;
+  }
+}

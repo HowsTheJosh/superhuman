@@ -1,0 +1,56 @@
+import React from "react";
+
+class SeqGameInfo extends React.Component {
+  render() {
+    return (
+      <>
+        <div
+          className="col-12"
+          style={{
+            textAlign: "center",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            color: "white",
+          }}
+        >
+          <div className="d-flex align-items-center flex-column bd-highlight ">
+            <div
+              id="game-text"
+              className="p-2 bd-highlight"
+              style={{ textAlign: "center" }}
+            >
+              {this.props.iconStatus}
+              <br />
+              {this.props.gameText}
+            </div>
+            <div id="infotext">{this.props.infoText}</div>
+            <div id="avgtext" className="p-2 bd-highlight"></div>
+            <div className="p-2 bd-highlight">
+              {
+                <button
+                  className="btn btn-danger"
+                  onClick={() => {
+                    this.props.handler(false, false);
+                    try {
+                      var ld = document.getElementById("levelDiv").clientHeight;
+                      console.log(ld);
+                      document.getElementById("levelPara").style.marginTop =
+                        ld / 2 + "px";
+                    } catch (err) {
+                      console.log("er");
+                    }
+                  }}
+                >
+                  {this.props.buttonText}
+                </button>
+              }
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+}
+
+export default SeqGameInfo;

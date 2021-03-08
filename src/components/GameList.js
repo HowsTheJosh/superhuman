@@ -43,7 +43,7 @@ export default class GameList extends Component {
 
                 <div
                   className="card card-anime"
-                  onClick={() => history.push("/superhuman/reaction")}
+                  onClick={() => history.push("/superhuman/sequence-memory")}
                 >
                   <div className="container" style={{ height: "100%" }}>
                     <div className="row" style={{ height: "25%" }}></div>
@@ -54,10 +54,10 @@ export default class GameList extends Component {
                       >
                         <i
                           style={{ textAlign: "center" }}
-                          className="bi bi-lightning-charge-fill icn-txt"
+                          className="bi bi-grid-fill icn-txt"
                         ></i>
                         <br />
-                        Reaction Time
+                        Sequence Memory
                       </div>
                     </div>
                     <div className="row" style={{ height: "25%" }}></div>

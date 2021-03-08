@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import "../Css/Banner.css";
-var h, wh, w;
+var h, wh;
 const svgVariants = {
   hidden: { rotate: 0 },
   visible: {
@@ -29,7 +29,6 @@ export default class Banner extends Component {
   componentDidMount() {
     h = document.getElementById("navbar").clientHeight;
     wh = window.innerHeight;
-    w = window.innerWidth;
     this.forceUpdate();
   }
   render() {
@@ -251,7 +250,10 @@ export default class Banner extends Component {
           </defs>
         </motion.svg>
 
-        <div className="anime-btn" style={{ marginTop: wh - 80 }}>
+        <div
+          className="anime-btn"
+          style={{ marginTop: (wh - 80).toString() + "px" }}
+        >
           <Link activeclassname="active" to="gamelist" spy={true} smooth={true}>
             Click to Explore
             <br />

@@ -6,11 +6,16 @@ var start = 0,
   t0 = 0,
   t1 = 0,
   gCount = 0,
-  avgRT = 0;
+  avgRT = 0,
+  h,
+  wh;
 export default class Reflex extends Component {
   state = { renderBtn: null };
   componentDidMount() {
     window.scrollTo(0, document.getElementById("root"));
+    h = document.getElementById("navbar").clientHeight;
+    wh = window.innerHeight;
+    this.forceUpdate();
   }
   startReflex() {
     gCount = gCount + 1;
@@ -30,9 +35,9 @@ export default class Reflex extends Component {
       document.getElementById(
         "game-text"
       ).innerHTML = `<i class="bi bi-hourglass-split"></i> <br/>Wait for green`;
-      var num = Math.floor(Math.random() * 500 + 500);
+      var num = Math.floor(Math.random() * 2000 + 2000);
       setTo = setTimeout(this.startReflex, num);
-      console.log(num);
+      // console.log(num);
     } else if (start && !green) {
       clearTimeout(setTo);
       start = 0;
@@ -53,10 +58,10 @@ export default class Reflex extends Component {
       avgRT = avgRT + Math.floor(t1 - t0);
       green = 0;
       start = 0;
-      if (gCount == 2) {
+      if (gCount === 3) {
         gCount = 0;
         start = 0;
-        avgRT = avgRT / 2;
+        avgRT = avgRT / 3;
         this.setState({ renderBtn: true });
         document.getElementById(
           "avgtext"
@@ -75,7 +80,7 @@ export default class Reflex extends Component {
           id="reflex-area"
           style={{
             background: "#2b87d1",
-            height: "93vh",
+            height: wh - h + "px",
           }}
         >
           <div className="row" style={{ height: "25%" }}></div>
