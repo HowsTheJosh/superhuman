@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/superhuman/static/css/main.0f7d3a98.chunk.css",
-    "main.js": "/superhuman/static/js/main.de5e8275.chunk.js",
-    "main.js.map": "/superhuman/static/js/main.de5e8275.chunk.js.map",
+    "main.css": "/superhuman/static/css/main.d35b791a.chunk.css",
+    "main.js": "/superhuman/static/js/main.66e18df3.chunk.js",
+    "main.js.map": "/superhuman/static/js/main.66e18df3.chunk.js.map",
     "runtime-main.js": "/superhuman/static/js/runtime-main.8242a7ec.js",
     "runtime-main.js.map": "/superhuman/static/js/runtime-main.8242a7ec.js.map",
     "static/css/2.2295ac45.chunk.css": "/superhuman/static/css/2.2295ac45.chunk.css",
-    "static/js/2.6d076346.chunk.js": "/superhuman/static/js/2.6d076346.chunk.js",
-    "static/js/2.6d076346.chunk.js.map": "/superhuman/static/js/2.6d076346.chunk.js.map",
+    "static/js/2.7e584d1d.chunk.js": "/superhuman/static/js/2.7e584d1d.chunk.js",
+    "static/js/2.7e584d1d.chunk.js.map": "/superhuman/static/js/2.7e584d1d.chunk.js.map",
     "index.html": "/superhuman/index.html",
     "static/css/2.2295ac45.chunk.css.map": "/superhuman/static/css/2.2295ac45.chunk.css.map",
-    "static/css/main.0f7d3a98.chunk.css.map": "/superhuman/static/css/main.0f7d3a98.chunk.css.map",
-    "static/js/2.6d076346.chunk.js.LICENSE.txt": "/superhuman/static/js/2.6d076346.chunk.js.LICENSE.txt"
+    "static/css/main.d35b791a.chunk.css.map": "/superhuman/static/css/main.d35b791a.chunk.css.map",
+    "static/js/2.7e584d1d.chunk.js.LICENSE.txt": "/superhuman/static/js/2.7e584d1d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8242a7ec.js",
     "static/css/2.2295ac45.chunk.css",
-    "static/js/2.6d076346.chunk.js",
-    "static/css/main.0f7d3a98.chunk.css",
-    "static/js/main.de5e8275.chunk.js"
+    "static/js/2.7e584d1d.chunk.js",
+    "static/css/main.d35b791a.chunk.css",
+    "static/js/main.66e18df3.chunk.js"
   ]
 }
