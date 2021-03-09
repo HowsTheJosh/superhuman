@@ -1,5 +1,5 @@
 import React from "react";
-import "../../Css/Sequence.css";
+import "../../../Css/Sequence.css";
 import SequenceMemoryGame from "./SequenceMemoryGame";
 import SeqGameInfo from "./SeqGameInfo";
 var h, wh, levels;
@@ -11,7 +11,6 @@ class Sequence extends React.Component {
   };
   componentDidMount() {
     h = document.getElementById("navbar").clientHeight;
-
     wh = window.innerHeight;
     this.forceUpdate();
   }
@@ -49,7 +48,7 @@ class Sequence extends React.Component {
                 handler={this.handler}
                 iconStatus={<i className="bi bi-emoji-dizzy-fill" />}
                 gameText="Game Over"
-                infoText={`${levels} levels cleared`}
+                infoText={`Levels cleared : ${levels} `}
                 buttonText="Start Again"
               />
             )}

@@ -28,6 +28,10 @@ div.col:active {
   div#infotext {
     font-size: 35px;
   }
+  #btn-size {
+    font-size: 20px;
+    padding: 12px 35px;
+  }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
   div#game-text {
@@ -37,7 +41,11 @@ div.col:active {
     font-size: 30px;
   }
   div#infotext {
-    font-size: 20px;
+    font-size: 30px;
+  }
+  #btn-size {
+    font-size: 25px;
+    padding: 10px 30px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -48,7 +56,11 @@ div.col:active {
     font-size: 30px;
   }
   div#infotext {
+    font-size: 30px;
+  }
+  #btn-size {
     font-size: 20px;
+    padding: 10px 30px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -59,7 +71,11 @@ div.col:active {
     font-size: 40px;
   }
   div#infotext {
+    font-size: 25px;
+  }
+  #btn-size {
     font-size: 20px;
+    padding: 10px 30px;
   }
 }
 
@@ -71,7 +87,12 @@ div.col:active {
     font-size: 40px;
   }
   div#infotext {
+    font-size: 25px;
+  }
+
+  #btn-size {
     font-size: 20px;
+    padding: 10px 30px;
   }
 }
 
@@ -81,5 +102,12 @@ div.col:active {
   }
   div#avgtext {
     font-size: 25px;
+  }
+  #infotext {
+    font-size: 23px;
+  }
+  #btn-size {
+    font-size: 15px;
+    padding: 10px 30px;
   }
 }

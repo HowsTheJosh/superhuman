@@ -1,0 +1,186 @@
+div.colorOptnBtn {
+  border-radius: 20px;
+  background-color: rgb(82, 78, 78);
+  font-size: 30px;
+  cursor: pointer;
+}
+.colorOptnBtn:active {
+  transition-duration: 0.05s;
+  transform: scale(0.8);
+}
+.colorOptnBtn:hover {
+  background-color: rgba(0, 0, 0, 0.603);
+}
+
+@media only screen and (min-width: 1400px) {
+  div#game-text {
+    font-size: 70px;
+  }
+  div#avgtext {
+    font-size: 30px;
+  }
+  div#infotext {
+    font-size: 35px;
+  }
+
+  #colorDisplay {
+    font-size: 120px;
+  }
+  #timePara {
+    font-size: 40px;
+  }
+  #levelPara {
+    font-size: 40px;
+  }
+  div.colorOptnBtn {
+    padding: 10px;
+    margin-top: 30%;
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 1199px) and (max-width: 1400px) {
+  div#game-text {
+    font-size: 50px;
+  }
+  div#avgtext {
+    font-size: 30px;
+  }
+  div#infotext {
+    font-size: 30px;
+  }
+  #btn-size {
+    font-size: 25px;
+    padding: 10px 30px;
+  }
+  #colorDisplay {
+    font-size: 100px;
+  }
+  #timePara {
+    font-size: 30px;
+  }
+  #levelPara {
+    font-size: 30px;
+  }
+  div.colorOptnBtn {
+    padding: 5px;
+    font-size: 25px;
+  }
+}
+@media only screen and (min-width: 991px) and (max-width: 1199px) {
+  div#game-text {
+    font-size: 50px;
+  }
+  div#avgtext {
+    font-size: 30px;
+  }
+  div#infotext {
+    font-size: 30px;
+  }
+
+  #colorDisplay {
+    font-size: 100px;
+  }
+  #timePara {
+    font-size: 30px;
+  }
+  #levelPara {
+    font-size: 30px;
+  }
+  div.colorOptnBtn {
+    margin-top: 40%;
+    padding: 5px;
+    font-size: 25px;
+  }
+  #colorDisplay {
+    font-size: 100px;
+  }
+  #timePara {
+    font-size: 30px;
+  }
+  #levelPara {
+    font-size: 30px;
+  }
+  div.colorOptnBtn {
+    padding: 5px;
+    font-size: 25px;
+  }
+}
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  div#game-text {
+    font-size: 50px;
+  }
+  div#avgtext {
+    font-size: 40px;
+  }
+  div#infotext {
+    font-size: 25px;
+  }
+  #btn-size {
+    font-size: 20px;
+    padding: 10px 30px;
+  }
+  #colorDisplay {
+    font-size: 100px;
+  }
+  #timePara {
+    font-size: 30px;
+  }
+  #levelPara {
+    font-size: 30px;
+  }
+  div.colorOptnBtn {
+    padding: 5px;
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  div#game-text {
+    font-size: 50px;
+  }
+  div#avgtext {
+    font-size: 40px;
+  }
+  div#infotext {
+    font-size: 25px;
+  }
+
+  div#levelPara {
+    font-size: 10px;
+  }
+  #colorDisplay {
+    font-size: 100px;
+  }
+  #timePara {
+    font-size: 30px;
+  }
+  #levelPara {
+    font-size: 30px;
+  }
+  div.colorOptnBtn {
+    padding: 5px;
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  div#game-text {
+    font-size: 35px;
+  }
+  #infotext {
+    font-size: 23px;
+  }
+  #colorDisplay {
+    font-size: 53px;
+  }
+  #timePara {
+    font-size: 25px;
+  }
+  #levelPara {
+    font-size: 25px;
+  }
+  div.colorOptnBtn {
+    padding: 5px;
+    font-size: 13px;
+  }
+}

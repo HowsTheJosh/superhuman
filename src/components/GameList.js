@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import history from "./History";
-import "../Css/GameList.css";
+import "../Css/Games.css";
 
 export default class GameList extends Component {
   render() {
@@ -65,7 +65,7 @@ export default class GameList extends Component {
                 </div>
                 <div
                   className="card card-anime"
-                  onClick={() => history.push("/superhuman/reaction")}
+                  onClick={() => history.push("/superhuman/guess-the-color")}
                 >
                   <div className="container" style={{ height: "100%" }}>
                     <div className="row" style={{ height: "25%" }}></div>
@@ -76,10 +76,10 @@ export default class GameList extends Component {
                       >
                         <i
                           style={{ textAlign: "center" }}
-                          className="bi bi-lightning-charge-fill icn-txt"
+                          className="bi bi-palette-fill icn-txt"
                         ></i>
                         <br />
-                        Reaction Time
+                        Guess The Color
                       </div>
                     </div>
                     <div className="row" style={{ height: "25%" }}></div>

@@ -6,6 +6,7 @@ div.anime-btn {
   font-size: 30px;
   animation-direction: alternate;
   text-align: center;
+  cursor: pointer;
 }
 @keyframes mmove {
   from {

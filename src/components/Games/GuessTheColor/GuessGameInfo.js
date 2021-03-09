@@ -1,6 +1,6 @@
 import React from "react";
 
-class SeqGameInfo extends React.Component {
+class GuessGameInfo extends React.Component {
   render() {
     return (
       <>
@@ -25,19 +25,17 @@ class SeqGameInfo extends React.Component {
               {this.props.gameText}
             </div>
             <div id="infotext">{this.props.infoText}</div>
-            <div id="avgtext" className="p-2 bd-highlight"></div>
+
             <div className="p-2 bd-highlight">
               {
                 <button
-                  className="btn btn-danger"
+                  id="btn-size"
+                  className="btn btn-danger "
                   onClick={() => {
                     this.props.handler(false, false);
                     try {
                       var ld = document.getElementById("levelDiv").clientHeight;
-
-                      document.getElementById("levelPara").style.marginTop =
-                        ld / 2 + "px";
-                      document.getElementById("turnPara").style.marginTop =
+                      document.getElementById("timePara").style.marginTop =
                         ld / 2 + "px";
                     } catch (err) {}
                   }}
@@ -53,4 +51,4 @@ class SeqGameInfo extends React.Component {
   }
 }
 
-export default SeqGameInfo;
+export default GuessGameInfo;
