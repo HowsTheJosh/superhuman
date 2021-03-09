@@ -34,14 +34,12 @@ class SeqGameInfo extends React.Component {
                     this.props.handler(false, false);
                     try {
                       var ld = document.getElementById("levelDiv").clientHeight;
-                      console.log(ld);
+
                       document.getElementById("levelPara").style.marginTop =
                         ld / 2 + "px";
                       document.getElementById("turnPara").style.marginTop =
                         ld / 2 + "px";
-                    } catch (err) {
-                      console.log("er");
-                    }
+                    } catch (err) {}
                   }}
                 >
                   {this.props.buttonText}

@@ -1,6 +1,8 @@
 .reddiv {
   /* animation: mymove 0.5s; */
   background-color: rgba(0, 255, 0, 1);
+  transition-duration: 0.5s;
+  transform: scale(0.95);
 }
 
 .greydiv {

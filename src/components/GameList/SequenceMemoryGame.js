@@ -5,74 +5,82 @@ var seqGameHeight = 0,
   counter = 0,
   level = 0,
   gameChance = true;
+
 export default class SequenceMemoryGame extends Component {
   state = { rendered: false };
   componentDidMount() {
-    seqGameHeight = document.getElementById("SeqGame").clientHeight;
-    seqGameWidth = document.getElementById("SeqGame").clientWidth;
-    seqGameWidth = seqGameWidth > seqGameHeight ? seqGameHeight : seqGameWidth;
-    this.setState({ rendered: true });
+    try {
+      seqGameHeight = document.getElementById("SeqGame").clientHeight;
+      seqGameWidth = document.getElementById("SeqGame").clientWidth;
+      seqGameWidth =
+        seqGameWidth > seqGameHeight ? seqGameHeight : seqGameWidth;
+      this.setState({ rendered: true });
+    } catch (err) {}
   }
   userClicked = (id) => {
-    if (!gameChance) {
-      if (compArr[counter] === id) {
-        // document.getElementById(id).style.background = "white";
-        // await this.sleep(200);
-        // document.getElementById(id).style.background = "rgb(100,100,100)";
-        counter = counter + 1;
+    try {
+      if (!gameChance) {
+        if (compArr[counter] === id) {
+          counter = counter + 1;
 
-        if (counter === compArr.length) {
-          level = counter;
+          if (counter === compArr.length) {
+            level = counter;
+            counter = 0;
+            this.computerPlays();
+          }
+        } else {
+          //Game Over Logic
+          document.getElementById("turnPara").innerHTML = "";
+          document.getElementById("levelPara").innerHTML = "";
+          this.props.handler(false, true, level);
+          compArr = [];
+          level = 0;
           counter = 0;
-          this.computerPlays();
-          console.log(compArr);
+          gameChance = true;
         }
-      } else {
-        //Game Over Logic
-        document.getElementById("turnPara").innerHTML = "";
-        document.getElementById("levelPara").innerHTML = "";
-        this.props.handler(false, true, level);
-        compArr = [];
-        level = 0;
-        counter = 0;
-        gameChance = true;
       }
-    }
+    } catch (err) {}
   };
 
   sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
   computerPlays = async () => {
-    document.getElementById(
-      "turnPara"
-    ).innerHTML = `<h1>Wait for your turn!</h1>`;
-    document.getElementById("levelPara").innerHTML = `<h1>Level : ${
-      level + 1
-    }</h1>`;
-    gameChance = true;
-    var tile = Math.floor(Math.random() * 9).toString();
-    compArr.push(tile);
+    try {
+      document.getElementById(
+        "turnPara"
+      ).innerHTML = `<h1>Wait for your turn!</h1>`;
+      document.getElementById("levelPara").innerHTML = `<h1>Level : ${
+        level + 1
+      }</h1>`;
+      gameChance = true;
+      var tile = Math.floor(Math.random() * 9).toString();
+      compArr.push(tile);
 
-    for (var i = 0; i < compArr.length; i++) {
-      await this.sleep(500);
-      document.getElementById(compArr[i]).classList.remove("greydiv");
-      document.getElementById(compArr[i]).classList.add("reddiv");
-      await this.sleep(500);
-      document.getElementById(compArr[i]).classList.remove("reddiv");
-      document.getElementById(compArr[i]).classList.add("greydiv");
-      //   document.getElementById(compArr[i]).style.backgroundColor =
-      //     "rgb(100,100,100)";
-    }
-    gameChance = false;
-    document.getElementById("turnPara").innerHTML = `<h1>It's your turn!</h1>`;
+      for (var i = 0; i < compArr.length; i++) {
+        await this.sleep(500);
+        document.getElementById(compArr[i]).classList.remove("greydiv");
+        document.getElementById(compArr[i]).classList.add("reddiv");
+        await this.sleep(500);
+        document.getElementById(compArr[i]).classList.remove("reddiv");
+        document.getElementById(compArr[i]).classList.add("greydiv");
+      }
+      gameChance = false;
+      document.getElementById(
+        "turnPara"
+      ).innerHTML = `<h1>It's your turn!</h1>`;
+    } catch (err) {}
   };
   gameStart = () => {
-    document.getElementById("levelPara").innerHTML = `Level : ${counter + 1}`;
-    compArr = [];
-    if (this.state.rendered) {
-      this.computerPlays();
-    }
+    try {
+      counter = 0;
+      level = 0;
+      document.getElementById("levelPara").innerHTML = `Level : ${counter + 1}`;
+      compArr = [];
+      if (this.state.rendered) {
+        this.computerPlays();
+      }
+    } catch (err) {}
   };
   render() {
     this.gameStart();

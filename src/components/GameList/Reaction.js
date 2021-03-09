@@ -12,64 +12,69 @@ var start = 0,
 export default class Reflex extends Component {
   state = { renderBtn: null };
   componentDidMount() {
-    window.scrollTo(0, document.getElementById("root"));
-    h = document.getElementById("navbar").clientHeight;
-    wh = window.innerHeight;
-    this.forceUpdate();
+    try {
+      window.scrollTo(0, document.getElementById("root"));
+      h = document.getElementById("navbar").clientHeight;
+      wh = window.innerHeight;
+      this.forceUpdate();
+    } catch (err) {}
   }
   startReflex() {
-    gCount = gCount + 1;
-    t0 = performance.now();
-    green = 1;
-    document.getElementById("reflex-area").style.background = "#4bdb6a";
-    document.getElementById(
-      "game-text"
-    ).innerHTML = `<i class="bi bi-hand-index-fill"></i> <br/>Click!`;
+    try {
+      gCount = gCount + 1;
+      t0 = performance.now();
+      green = 1;
+      document.getElementById("reflex-area").style.background = "#4bdb6a";
+      document.getElementById(
+        "game-text"
+      ).innerHTML = `<i class="bi bi-hand-index-fill"></i> <br/>Click!`;
+    } catch (err) {}
   }
   runReflex() {
-    if (!start && !green && !this.state.renderBtn) {
-      document.getElementById("avgtext").innerHTML = "";
-      document.getElementById("infotext").innerHTML = "";
-      start = 1;
-      document.getElementById("reflex-area").style.background = "#ce2636";
-      document.getElementById(
-        "game-text"
-      ).innerHTML = `<i class="bi bi-hourglass-split"></i> <br/>Wait for green`;
-      var num = Math.floor(Math.random() * 2000 + 2000);
-      setTo = setTimeout(this.startReflex, num);
-      // console.log(num);
-    } else if (start && !green) {
-      clearTimeout(setTo);
-      start = 0;
-      document.getElementById("reflex-area").style.background = "#2b87d1";
-      document.getElementById(
-        "game-text"
-      ).innerHTML = `<i class="bi bi-shield-fill-exclamation"></i> <br/>Clicked too soon!`;
-      document.getElementById("infotext").innerHTML = "Click to try again";
-    } else if (start && green) {
-      t1 = performance.now();
-      document.getElementById("reflex-area").style.background = "#2b87d1";
-      document.getElementById(
-        "game-text"
-      ).innerHTML = `<i class="bi bi-clock-fill"></i> <br/> ${Math.floor(
-        t1 - t0
-      )} ms`;
-      document.getElementById("infotext").innerHTML = "Click to continue";
-      avgRT = avgRT + Math.floor(t1 - t0);
-      green = 0;
-      start = 0;
-      if (gCount === 3) {
-        gCount = 0;
-        start = 0;
-        avgRT = avgRT / 3;
-        this.setState({ renderBtn: true });
-        document.getElementById(
-          "avgtext"
-        ).innerHTML = `Average Reflex Time ${avgRT.toFixed(2)}`;
+    try {
+      if (!start && !green && !this.state.renderBtn) {
+        document.getElementById("avgtext").innerHTML = "";
         document.getElementById("infotext").innerHTML = "";
-        avgRT = 0;
+        start = 1;
+        document.getElementById("reflex-area").style.background = "#ce2636";
+        document.getElementById(
+          "game-text"
+        ).innerHTML = `<i class="bi bi-hourglass-split"></i> <br/>Wait for green`;
+        var num = Math.floor(Math.random() * 2000 + 2000);
+        setTo = setTimeout(this.startReflex, num);
+      } else if (start && !green) {
+        clearTimeout(setTo);
+        start = 0;
+        document.getElementById("reflex-area").style.background = "#2b87d1";
+        document.getElementById(
+          "game-text"
+        ).innerHTML = `<i class="bi bi-shield-fill-exclamation"></i> <br/>Clicked too soon!`;
+        document.getElementById("infotext").innerHTML = "Click to try again";
+      } else if (start && green) {
+        t1 = performance.now();
+        document.getElementById("reflex-area").style.background = "#2b87d1";
+        document.getElementById(
+          "game-text"
+        ).innerHTML = `<i class="bi bi-clock-fill"></i> <br/> ${Math.floor(
+          t1 - t0
+        )} ms`;
+        document.getElementById("infotext").innerHTML = "Click to continue";
+        avgRT = avgRT + Math.floor(t1 - t0);
+        green = 0;
+        start = 0;
+        if (gCount === 3) {
+          gCount = 0;
+          start = 0;
+          avgRT = avgRT / 3;
+          this.setState({ renderBtn: true });
+          document.getElementById(
+            "avgtext"
+          ).innerHTML = `Average Reflex Time ${avgRT.toFixed(2)}`;
+          document.getElementById("infotext").innerHTML = "";
+          avgRT = 0;
+        }
       }
-    }
+    } catch (err) {}
   }
   render() {
     return (

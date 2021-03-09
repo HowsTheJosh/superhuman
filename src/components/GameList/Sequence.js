@@ -8,7 +8,6 @@ class Sequence extends React.Component {
   handler = (renderInfo, gameOver, levelsFromSequenceMemoryGame) => {
     levels = levelsFromSequenceMemoryGame;
     this.setState({ renderInfo, gameOver });
-    console.log(levels);
   };
   componentDidMount() {
     h = document.getElementById("navbar").clientHeight;
